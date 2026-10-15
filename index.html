@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>王嘉皓 · 作品集 | 动画（漫插画）</title>
+<meta name="description" content="王嘉皓 · 浙江传媒学院动画（漫插画）专业 · 三维动画制作 / 构图与镜头 / 绑定 / UE5 + AI 视频管线">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%238C3B2E'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='white' font-family='sans-serif'%3E王%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1a1a1a; --sub:#6e6e6e; --line:#e4e4e4; --bg:#ffffff;
+  --accent:#8c3b2e; --soft:#faf8f6; --maxw:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Source Han Sans SC",sans-serif;
+  font-size:16px; line-height:1.75; letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.accentbar{height:6px;background:var(--accent)}
+
+/* ---------- 头 ---------- */
+header{padding:88px 0 56px}
+.eyebrow{font-size:13px;letter-spacing:.4em;color:var(--sub);margin-bottom:20px}
+h1{font-size:clamp(44px,8vw,80px);line-height:1.05;font-weight:800;letter-spacing:-.01em}
+.rule{width:64px;height:4px;background:var(--accent);margin:26px 0 30px}
+.headline{font-size:clamp(17px,2.4vw,21px);color:var(--ink)}
+.role{font-size:clamp(15px,2vw,17px);color:var(--accent);margin-top:14px;font-weight:600}
+.award{font-size:14.5px;color:var(--sub);margin-top:8px}
+.contact{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:10px 26px;font-size:14px;color:var(--sub)}
+.contact b{font-weight:600;color:var(--ink)}
+
+/* ---------- 区块 ---------- */
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(26px,4vw,36px);font-weight:800;line-height:1.25}
+.meta{color:var(--sub);font-size:14px;margin-top:12px}
+.sechead{margin-bottom:34px}
+.sechead .rule{margin:20px 0 0;width:44px;height:3px}
+
+/* ---------- 能力 ---------- */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:34px 28px}
+.skill h3{font-size:14.5px;color:var(--accent);font-weight:700;margin-bottom:6px}
+.skill hr{border:0;border-top:1px solid var(--line);width:36px;margin:0 0 14px}
+.skill li{list-style:none;font-size:14.5px;line-height:2}
+.note{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);font-size:13.5px;color:var(--sub)}
+
+/* ---------- 项目 ---------- */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:760px){.cols{grid-template-columns:1fr;gap:34px}}
+.block h3{font-size:14.5px;color:var(--accent);font-weight:700;margin-bottom:10px}
+.block p,.block li{font-size:14.5px;line-height:1.85}
+.block li{list-style:none}
+.block ul{margin:0}
+.work li{margin-bottom:16px}
+.work li b{display:block;font-weight:700;font-size:15px}
+.work li span{color:var(--sub);font-size:14px;display:block;margin-top:2px}
+.notmine{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13.5px;color:var(--sub)}
+
+/* ---------- 图 ---------- */
+.grid{display:grid;gap:20px;margin-top:34px}
+.g6{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.gw{grid-template-columns:repeat(4,1fr)}
+@media(max-width:760px){.g6,.g4,.g3,.gw{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.g6,.g3,.gw{grid-template-columns:1fr}}
+figure{margin:0}
+figure img{width:100%;border:1px solid var(--line);border-radius:2px;background:var(--soft)}
+figcaption{font-size:12.5px;color:var(--sub);margin-top:8px}
+.shot figure img{padding:0}
+
+/* 按高度对齐的一排（打工鱼） */
+.row{display:flex;gap:18px;align-items:flex-start;margin-top:34px}
+.row figure{flex:0 0 auto}
+.row img{border:1px solid var(--line);border-radius:2px}
+@media(max-width:640px){.row{flex-wrap:wrap}.row figure{flex:1 1 45%}}
+
+footer{border-top:1px solid var(--line);padding:56px 0 72px;color:var(--sub);font-size:14px}
+.btn{display:inline-block;border:1px solid var(--accent);color:var(--accent);
+  padding:11px 24px;border-radius:2px;font-size:14.5px;font-weight:600;margin-bottom:26px}
+.btn:hover{background:var(--accent);color:#fff;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="accentbar"></div>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">作 品 集</div>
+  <h1>王嘉皓</h1>
+  <div class="rule"></div>
+  <p class="headline">动画（漫插画）　·　浙江传媒学院　·　大三在读（2028 届）</p>
+  <p class="role">三维动画制作　｜　构图与镜头　·　绑定　·　UE5 + AI 视频管线</p>
+  <p class="award">参与作品入围 第 26 届北京电影学院动画学院奖</p>
+  <div class="contact">
+    <span>邮箱 <b>1977132561@qq.com</b></span>
+    <span>电话 <b>135 1681 4130</b></span>
+    <span>备用 <b>131 3106 1755</b></span>
+  </div>
+</header>
+
+<section>
+  <div class="sechead"><h2>能力矩阵</h2><div class="rule"></div></div>
+  <div class="skills">
+    <div class="skill"><h3>三维制作</h3><hr><ul>
+      <li>Maya — 绑定 / 动画</li><li>Blender</li><li>SketchUp Pro</li>
+      <li>Substance 3D</li><li>Arnold / Bifrost</li><li>DAZ Studio</li><li>MayaUSD</li></ul></div>
+    <div class="skill"><h3>引擎与管线</h3><hr><ul>
+      <li>Unreal Engine 5</li><li>UE5 首尾帧 + AI 视频生成</li>
+      <li>镜头首尾帧渲染</li><li>AI 视频片段拼接</li><li>渲染 — 合成 — 成片流程</li></ul></div>
+    <div class="skill"><h3>二维与设计</h3><hr><ul>
+      <li>CLIP STUDIO PAINT</li><li>Photoshop / Illustrator</li><li>SAI / Krita</li>
+      <li>绘本 · 角色 · 场景设计</li><li>海报与视觉物料</li></ul></div>
+    <div class="skill"><h3>工具与流程</h3><hr><ul>
+      <li>Premiere Pro / After Effects</li><li>AI 工具链集成与流程搭建</li>
+      <li>借助 AI 完成脚本编写、批处理与格式转换</li></ul></div>
+  </div>
+  <p class="note">以上技能均有对应项目产出，详见下方作品。</p>
+</section>
+
+<section>
+  <div class="sechead">
+    <h2>《百年老街 · 王三街》第一集</h2>
+    <p class="meta">2025　｜　三维动画短片　｜　浙江传媒学院动画与数字艺术学院「新疆题材动漫创作计划」</p>
+    <div class="rule"></div>
+  </div>
+  <div class="cols">
+    <div class="block">
+      <h3>项目荣誉</h3>
+      <ul>
+        <li>入围　第 26 届北京电影学院动画学院奖</li>
+        <li>获评　2025 年度自治区社科普及优秀项目</li>
+      </ul>
+      <h3 style="margin-top:26px">项目性质</h3>
+      <p>教师执导的师生团队项目，经校友公司以校企合作方式承接制作。全片原计划三集，本人参与第一集。</p>
+    </div>
+    <div class="block">
+      <h3>我在第一集中的工作</h3>
+      <ul class="work">
+        <li><b>1　构图与镜头组织（Layout）</b>
+          <span>基于制作团队提供的人物与场景模型，完成分镜到三维画面的落地，负责镜头构图与场面调度。</span></li>
+        <li><b>2　绑定（Rigging）</b>
+          <span>负责模型部分的骨骼绑定。</span></li>
+        <li><b>3　UE5 + AI 视频管线</b>
+          <span>在 UE5 中渲染各镜头首尾帧，以 AI 生成中间帧视频片段并完成拼接。</span></li>
+        <li><b>4　海报设计（协助）</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid g6 shot">
+    <figure><img src="wsj1.jpg" loading="lazy" alt="分镜：大门牌坊"><figcaption>WSJ · 大门牌坊</figcaption></figure>
+    <figure><img src="wsj2.jpg" loading="lazy" alt="分镜：肉孜托孤"><figcaption>WSJ · 肉孜托孤</figcaption></figure>
+    <figure><img src="wsj3.jpg" loading="lazy" alt="分镜：航拍阿克苏"><figcaption>WSJ · 航拍阿克苏</figcaption></figure>
+    <figure><img src="wsj4.jpg" loading="lazy" alt="分镜：学堂"><figcaption>WSJ · 学堂</figcaption></figure>
+    <figure><img src="wsj5.jpg" loading="lazy" alt="分镜：室内苏醒"><figcaption>WSJ · 室内苏醒</figcaption></figure>
+    <figure><img src="wsj6.jpg" loading="lazy" alt="分镜：离开阿克苏"><figcaption>WSJ · 离开阿克苏</figcaption></figure>
+  </div>
+  <div class="grid g4 shot" style="margin-top:20px">
+    <figure><img src="rev13.jpg" loading="lazy" alt="分镜修改稿：学堂"><figcaption>分镜修改稿 · 学堂</figcaption></figure>
+    <figure><img src="rev16.jpg" loading="lazy" alt="分镜修改稿：老街"><figcaption>分镜修改稿 · 老街</figcaption></figure>
+  </div>
+
+  <p class="notmine">非本人负责：人物模型、场景模型、剧本、分镜绘制、导演。</p>
+</section>
+
+<section>
+  <div class="sechead">
+    <h2>绘本《口技》</h2>
+    <p class="meta">2024　｜　实体绘本　｜　改编自清 · 林嗣环《口技》　｜　入围 2026 北京电影学院漫画节</p>
+    <div class="rule"></div>
+  </div>
+  <div class="cols">
+    <div class="block">
+      <h3>作品说明</h3>
+      <p>课程作品，教师指导、小组完成。</p>
+      <h3 style="margin-top:26px">本人负责</h3>
+      <ul>
+        <li>·　部分人物设计</li>
+        <li>·　部分场景设计</li>
+        <li>·　部分内页内容绘制</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h3>作品形态</h3>
+      <p>完整印刷绘本，以水墨设色呈现清代林嗣环《口技》一文——从「遥闻深巷中犬吠」到「两股战战，几欲先走」，用连续画面还原这场以声音为主角的表演。</p>
+    </div>
+  </div>
+  <div class="grid g4 shot">
+    <figure><img src="kouji_a.jpg" loading="lazy" alt="口技内页：一家四口"><figcaption>内容绘制 · 一家四口</figcaption></figure>
+    <figure><img src="kouji_b.jpg" loading="lazy" alt="口技内页：火场"><figcaption>内容绘制 · 火场</figcaption></figure>
+    <figure><img src="kouji_c.jpg" loading="lazy" alt="人物设计"><figcaption>人物设计</figcaption></figure>
+    <figure><img src="kouji_d.jpg" loading="lazy" alt="场景设计：江南水乡"><figcaption>场景设计 · 江南水乡</figcaption></figure>
+  </div>
+  <p class="note">以上为本人绘制的原稿。</p>
+</section>
+
+<section>
+  <div class="sechead">
+    <h2>表情包《打工鱼》</h2>
+    <p class="meta">2024　｜　表情包设计　｜　风车杯第十六届创意设计大赛　·　获奖</p>
+    <div class="rule"></div>
+  </div>
+  <div class="cols">
+    <div class="block">
+      <h3>作品说明</h3>
+      <p>课程作品，围绕职场日常创作。以一条绿色小鱼为主角，覆盖加班、摸鱼、开会、心累等典型职场场景。</p>
+    </div>
+    <div class="block">
+      <h3>本人负责</h3>
+      <p><b>独立完成</b>全部表情形象、封面图与宣传海报。</p>
+    </div>
+  </div>
+  <div class="row">
+    <figure style="flex:0 1 55.5%"><img src="dgy_cover.jpg" loading="lazy" alt="打工鱼封面图"></figure>
+    <figure style="flex:0 1 22.25%"><img src="dgy_poster.jpg" loading="lazy" alt="打工鱼宣传海报"></figure>
+    <figure style="flex:0 1 22.25%"><img src="dgy_all.jpg" loading="lazy" alt="打工鱼表情总览"></figure>
+  </div>
+  <p class="note" style="margin-top:18px">封面图　·　宣传海报　·　全套表情总览</p>
+</section>
+
+<section>
+  <div class="sechead">
+    <h2>课程作品</h2>
+    <p class="meta">动漫角色设计　·　漫画背景设计　·　插画创作　·　动态造型基础</p>
+    <div class="rule"></div>
+  </div>
+  <div class="grid gw shot">
+    <figure><img src="cw1.jpg" loading="lazy" alt="动漫角色设计"><figcaption>动漫角色设计 · 期末作业</figcaption></figure>
+    <figure><img src="cw2.jpg" loading="lazy" alt="漫画背景设计"><figcaption>漫画背景设计 · 场景作业</figcaption></figure>
+    <figure><img src="cw3.jpg" loading="lazy" alt="插画创作"><figcaption>插画创作</figcaption></figure>
+    <figure><img src="cw4.jpg" loading="lazy" alt="动态造型基础"><figcaption>动态造型基础</figcaption></figure>
+  </div>
+</section>
+
+<footer>
+  <a class="btn" href="portfolio.pdf" target="_blank" rel="noopener">下载 PDF 版作品集</a>
+  <p>王嘉皓　·　浙江传媒学院 动画（漫插画）　·　大三在读（2028 届）</p>
+  <p>1977132561@qq.com　·　135 1681 4130　·　131 3106 1755</p>
+</footer>
+
+</div>
+</body>
+</html>
