@@ -3,201 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>王嘉皓 — 三维动画 / 插画 / 绘本</title>
-<meta name="description" content="王嘉皓，浙江传媒学院动画（漫插画）。镜头 Layout、骨骼绑定、UE5 与 AI 视频；插画与绘本。">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23161616'/%3E%3Ctext x='32' y='45' font-size='36' text-anchor='middle' fill='white' font-family='serif'%3E王%3C/text%3E%3C/svg%3E">
+<title>王嘉皓</title>
+<meta name="description" content="王嘉皓 — 三维动画、绘本、插画。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23161616'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='white' font-family='serif'%3E王%3C/text%3E%3C/svg%3E">
 <style>
 :root{
   --ink:#161616;
-  --grey:#7d7a76;
-  --pale:#f4f2ef;
-  --line:#d8d4cf;
-  --rhythm:1180px;
+  --grey:#8a857e;
+  --line:#e2ded8;
+  --pale:#f2efeb;
+  --col:1120px;
   --serif:"Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong","SimSun",Georgia,serif;
   --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Source Han Sans SC",sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{
-  background:#fff;color:var(--ink);
-  font-family:var(--sans);font-size:16.5px;line-height:1.78;
-  -webkit-font-smoothing:antialiased;
-}
+body{background:#fff;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;
+  -webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%;height:auto}
-a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
-a:hover{border-bottom-color:var(--ink)}
-.wrap{max-width:var(--rhythm);margin:0 auto;padding:0 28px}
-@media(max-width:560px){.wrap{padding:0 20px}}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--col);margin:0 auto;padding:0 30px}
+@media(max-width:560px){.wrap{padding:0 18px}}
 
-/* ---- 栏顶：只有名字和章节 ---- */
 .bar{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
-.bar .wrap{display:flex;align-items:baseline;justify-content:space-between;gap:18px;
-  min-height:52px;padding-top:13px;padding-bottom:13px}
-.bar .me{font-family:var(--serif);font-size:16px;letter-spacing:.04em}
-.bar nav{display:flex;gap:20px;font-size:14px;color:var(--grey);overflow-x:auto;scrollbar-width:none}
+.bar .wrap{display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  min-height:50px;padding-top:12px;padding-bottom:12px}
+.bar .name{font-family:var(--serif);font-size:15px;letter-spacing:.08em}
+.bar nav{display:flex;gap:22px;font-size:12.5px;color:var(--grey);overflow-x:auto;scrollbar-width:none}
 .bar nav::-webkit-scrollbar{display:none}
-.bar nav a{color:var(--grey);border:0;white-space:nowrap}
+.bar nav a{white-space:nowrap}
 .bar nav a:hover{color:var(--ink)}
-@media(max-width:640px){
-  .bar .wrap{flex-direction:column;align-items:flex-start;gap:4px;padding-top:10px;padding-bottom:10px}
-  .bar nav{gap:14px;font-size:13px;width:100%}
+@media(max-width:620px){
+  .bar .wrap{flex-direction:column;align-items:flex-start;gap:3px;padding-top:9px;padding-bottom:9px}
+  .bar nav{gap:15px;width:100%}
 }
 
-/* ---- 首屏 ---- */
-.hero{padding:64px 0 0}
-.hero .me{font-family:var(--serif);font-size:clamp(34px,5vw,52px);line-height:1.2;letter-spacing:.02em}
-.hero .keel{font-family:var(--serif);font-size:clamp(19px,2.6vw,26px);line-height:1.6;
-  color:var(--ink);margin-top:14px;max-width:32em}
-.hero .said{margin-top:26px;max-width:36em;font-size:15.5px;line-height:1.95;color:var(--ink)}
-.hero .said p+p{margin-top:.7em}
-.hero .where{margin-top:22px;font-size:14px;color:var(--grey)}
-.hero .mail{margin-top:6px;font-size:14px;color:var(--grey)}
-.hero .mail a{color:var(--grey);border-bottom-color:var(--line)}
-.hero .mail a:hover{color:var(--ink);border-bottom-color:var(--ink)}
-.plate{margin-top:44px}
-.plate img{width:100%;display:block}
-.plate p{margin-top:9px;font-size:13px;color:var(--grey)}
+.masthead{padding:78px 0 0}
+.masthead h1{font-family:var(--serif);font-weight:400;
+  font-size:clamp(40px,7.2vw,86px);line-height:1.04;letter-spacing:.06em}
 
-/* ---- 章节 ---- */
-section{padding:74px 0 0}
-.chapter{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;
-  border-top:1px solid var(--line);padding-top:20px}
-.chapter h2{font-family:var(--serif);font-size:clamp(21px,3vw,28px);font-weight:600;line-height:1.35}
-.chapter .when{font-size:13.5px;color:var(--grey)}
-.lede{margin-top:16px;max-width:38em;font-size:15.5px;line-height:1.95}
-.lede p+p{margin-top:.75em}
+.work{padding-top:66px}
+.entry{padding-top:22px;border-top:1px solid var(--line)}
+.entry .head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.entry h2{font-family:var(--serif);font-weight:400;font-size:clamp(19px,2.6vw,26px);
+  line-height:1.4;letter-spacing:.02em}
+.entry .tag{margin-left:auto;font-size:12.5px;color:var(--grey);letter-spacing:.04em;white-space:nowrap}
+@media(max-width:560px){.entry .tag{margin-left:0}}
 
-/* ---- 技能 ---- */
-.craft{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:34px 52px}
-@media(max-width:760px){.craft{grid-template-columns:1fr;gap:26px}}
-.craft h3{font-family:var(--serif);font-size:17px;font-weight:600;margin-bottom:8px}
-.craft p{font-size:15px;line-height:1.9}
-.craft .aside{grid-column:1/-1;border-top:1px solid var(--line);padding-top:16px;
-  font-size:14px;color:var(--grey);line-height:1.85}
+.plate{margin-top:26px}
+.plate img{width:100%;background:var(--pale)}
+.plate img.zoom{cursor:zoom-in}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.pair .plate{margin-top:0}
+@media(max-width:700px){.pair{grid-template-columns:1fr}}
 
-/* ---- 两栏说明 ---- */
-.notes{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:34px 52px}
-@media(max-width:760px){.notes{grid-template-columns:1fr;gap:26px}}
-.notes h3{font-family:var(--serif);font-size:16px;font-weight:600;margin-bottom:7px}
-.notes p,.notes li{font-size:15px;line-height:1.9}
-.notes ul{list-style:none}
-.notes li+li{margin-top:.2em}
-
-/* ---- 流程（真的是步骤，所以有序号） ---- */
-.steps{margin-top:30px;display:flex;flex-wrap:wrap;gap:0}
-.steps .st{flex:1 1 150px;min-width:0;padding:14px 16px 16px;border-left:1px solid var(--line)}
-.steps .st:first-child{border-left:0;padding-left:0}
-.steps .n{font-family:var(--serif);font-size:13px;color:var(--grey)}
-.steps .t{font-family:var(--serif);font-size:15.5px;margin-top:2px}
-.steps .d{font-size:13.5px;color:var(--grey);line-height:1.75;margin-top:5px}
-@media(max-width:760px){
-  .steps{flex-direction:column}
-  .steps .st{border-left:0;border-top:1px solid var(--line);padding:13px 0 0;flex:1 1 auto}
-  .steps .st:first-child{border-top:0;padding-top:0}
-}
-
-/* ---- 小标题（不是章节，只是分段） ---- */
-.beat{margin-top:46px;font-family:var(--serif);font-size:15.5px;font-weight:600;
-  border-bottom:1px solid var(--line);padding-bottom:9px}
-
-/* ---- 图 ---- */
-.grid{display:grid;gap:16px;margin-top:20px}
-.g3{grid-template-columns:repeat(3,1fr)}
-.g2{grid-template-columns:repeat(2,1fr)}
-.g8{grid-template-columns:repeat(8,1fr);gap:9px}
-/* 长宽比不齐的一组用瀑布流，避免按最高那张对齐留白 */
-.mason{columns:3;column-gap:16px;margin-top:20px}
-.mason figure{break-inside:avoid;margin:0 0 16px;display:block}
-@media(max-width:760px){.mason{columns:2}}
+.mason{columns:3;column-gap:14px;margin-top:26px}
+.mason img{width:100%;margin-bottom:14px;break-inside:avoid;display:block;background:var(--pale);cursor:zoom-in}
+@media(max-width:820px){.mason{columns:2}}
 @media(max-width:480px){.mason{columns:1}}
-@media(max-width:760px){.g3{grid-template-columns:repeat(2,1fr)}.g8{grid-template-columns:repeat(4,1fr)}}
-@media(max-width:480px){.g3,.g2{grid-template-columns:1fr}}
-figure{margin:0}
-figure img{width:100%;background:var(--pale)}
-.shot img{cursor:zoom-in}
-figcaption{font-size:12.5px;color:var(--grey);margin-top:7px;line-height:1.6}
-.wide{margin-top:20px}
-.wide img{width:100%}
-.narrow{max-width:700px}
-.narrower{max-width:470px}
-.thumb figcaption{text-align:center;margin-top:5px}
-.thumb img{background:transparent}
 
-/* ---- 视频 ---- */
-.clip{margin-top:20px;max-width:760px}
-.clip video{width:100%;background:#000;display:block}
-.clip figcaption{margin-top:9px}
+.sheet{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;margin-top:26px}
+.sheet img{width:100%;background:transparent}
+@media(max-width:760px){.sheet{grid-template-columns:repeat(4,1fr)}}
+
+.film{margin-top:26px;max-width:780px}
+.film video{width:100%;background:#000;display:block}
 .print-only{display:none}
 
-/* ---- 一句实话 ---- */
-.plain{margin-top:34px;padding:16px 18px;background:var(--pale);
-  font-size:14px;line-height:1.9;color:#3c3a37}
-.plain p+p{margin-top:.6em}
-.tail{margin-top:14px;font-size:14px;color:var(--grey)}
-.four{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:22px 52px}
-@media(max-width:760px){.four{grid-template-columns:1fr;gap:18px}}
-.four b{font-family:var(--serif);font-size:15.5px;font-weight:600}
-.four p{font-size:14.5px;line-height:1.9;margin-top:3px}
+footer{margin-top:86px;border-top:1px solid var(--line);padding:26px 0 60px}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:13px;color:var(--grey)}
+footer a{color:var(--grey)}
+footer a:hover{color:var(--ink)}
 
-/* ---- 页脚 ---- */
-footer{margin-top:76px;border-top:1px solid var(--line);padding:34px 0 64px;font-size:14px;color:var(--grey)}
-footer .dl{display:inline-block;border:1px solid var(--ink);color:var(--ink);
-  padding:10px 22px;font-size:14px;margin-bottom:26px}
-footer .dl:hover{background:var(--ink);color:#fff}
-footer p+p{margin-top:3px}
-footer a.up{display:inline-block;margin-top:20px;color:var(--grey);border:0}
-footer a.up:hover{color:var(--ink)}
-
-/* ---- 灯箱 ---- */
-#lb{position:fixed;inset:0;z-index:200;background:rgba(14,14,14,.95);
-  display:none;align-items:center;justify-content:center;padding:24px}
+#lb{position:fixed;inset:0;z-index:200;background:rgba(12,12,12,.96);
+  display:none;align-items:center;justify-content:center;padding:22px}
 #lb.on{display:flex}
-#lb img{max-width:100%;max-height:calc(100vh - 92px);width:auto;height:auto}
-#lb .cap{position:absolute;bottom:24px;left:0;right:0;text-align:center;
-  color:#cfcfcf;font-size:13px;padding:0 24px}
-#lb .x{position:absolute;top:14px;right:20px;color:#fff;font-size:30px;line-height:1;
-  cursor:pointer;opacity:.75;font-family:sans-serif}
+#lb img{max-width:100%;max-height:calc(100vh - 80px);width:auto;height:auto}
+#lb .x{position:absolute;top:12px;right:18px;color:#fff;font-size:28px;line-height:1;
+  cursor:pointer;opacity:.7;font-family:sans-serif}
 #lb .x:hover{opacity:1}
-@media(max-width:560px){#lb{padding:12px}#lb img{max-height:calc(100vh - 78px)}}
+@media(max-width:560px){#lb{padding:10px}#lb img{max-height:calc(100vh - 66px)}}
 
-/* ---- 打印 / PDF ---- */
 @media print{
-  @page{size:A4;margin:14mm 12mm}
-  html{scroll-behavior:auto}
-  body{font-size:10pt;line-height:1.6}
+  @page{size:A4;margin:15mm 13mm}
+  body{font-size:9.5pt;line-height:1.55}
   .bar{display:none}
   #lb{display:none!important}
   .wrap{max-width:none;padding:0}
-  .hero{padding:0 0 8mm}
-  .hero .me{font-size:24pt}
-  .hero .keel{font-size:12pt}
-  .hero .said{font-size:9.5pt}
-  .hero .mail{font-size:9pt}
-  .plate{margin-top:6mm}
-  section{padding:7mm 0 0}
-  .chapter{padding-top:4mm;page-break-after:avoid}
-  .chapter h2{font-size:15pt}
-  .lede,.notes{margin-top:4mm}
-  .grid{gap:4mm;margin-top:4mm}
-  .craft{grid-template-columns:1fr 1fr!important;gap:5mm 10mm}
-  .notes{grid-template-columns:1fr 1fr!important;gap:5mm 10mm}
-  .g3{grid-template-columns:repeat(3,1fr)}
-  .g2{grid-template-columns:repeat(2,1fr)}
-  .g8{grid-template-columns:repeat(8,1fr);gap:2mm}
-  .mason{columns:3!important;column-gap:4mm}
-  .mason figure{margin-bottom:4mm}
-  figure,figure img,figcaption{page-break-inside:avoid}
-  .steps{page-break-inside:avoid}
-  .plain{page-break-inside:avoid}
-  .clip{max-width:none}
-  .clip video{display:none}
-  .clip .print-only{display:block}
+  .masthead{padding:0 0 6mm}
+  .masthead h1{font-size:26pt}
+  .work{padding-top:8mm}
+  .entry{padding-top:4mm;page-break-after:avoid}
+  .entry h2{font-size:14pt}
+  .plate{margin-top:4mm}
+  .plate,.plate img{page-break-inside:avoid}
+  .pair{gap:4mm;margin-top:4mm}
+  .mason{columns:3!important;column-gap:4mm;margin-top:4mm}
+  .mason img{margin-bottom:4mm}
+  .sheet{grid-template-columns:repeat(8,1fr);gap:2mm;margin-top:4mm}
+  .film{max-width:none}
+  .film video{display:none}
+  .film .print-only{display:block}
   .print-only{display:block}
-  .narrow{max-width:120mm}
-  .narrower{max-width:80mm}
-  footer{margin-top:8mm;padding:5mm 0 0;page-break-before:avoid}
-  footer .dl,footer a.up{display:none}
-  a{border:0}
+  footer{margin-top:8mm;padding:4mm 0 0}
 }
 </style>
 </head>
@@ -205,332 +114,169 @@ footer a.up:hover{color:var(--ink)}
 
 <div class="bar">
   <div class="wrap">
-    <a class="me" href="#top">王嘉皓</a>
+    <a class="name" href="#top">王嘉皓</a>
     <nav>
-      <a href="#craft">会做什么</a>
-      <a href="#wsj">王三街</a>
+      <a href="#wang">王三街</a>
+      <a href="#travel">他喜欢去旅行</a>
       <a href="#kouji">口技</a>
-      <a href="#pb">他喜欢去旅行</a>
-      <a href="#art">插画</a>
-      <a href="#dgy">打工鱼</a>
-      <a href="#course">课程作业</a>
+      <a href="#worker">打工鱼</a>
+      <a href="#draw">插画</a>
     </nav>
   </div>
 </div>
 
-<header class="hero" id="top">
+<header class="masthead" id="top">
   <div class="wrap">
-    <div class="me">王嘉皓</div>
-    <div class="keel">三维动画，和画画。</div>
-    <div class="said">
-      <p>浙江传媒学院动画（漫插画）专业，2028 届。</p>
-      <p>在《百年老街·王三街》第一集做镜头 Layout 和部分骨骼绑定，在 UE5 里渲染每个镜头的首尾帧，中间的帧交给 AI 生成，再接成片。平时画画、做绘本、设计形象。</p>
-    </div>
-    <div class="where">浙江传媒学院 · 杭州</div>
-    <div class="mail">作品集问题请联系 <a href="mailto:1977132561@qq.com">1977132561@qq.com</a></div>
-
-    <figure class="plate">
-      <img src="wsj_shot.jpg" alt="《百年老街·王三街》第一集成片画面：孩子在车里回头">
-      <p>《百年老街·王三街》第一集，成片里的一帧。</p>
-    </figure>
+    <h1>王嘉皓</h1>
   </div>
 </header>
 
-<section id="craft">
+<section class="work" id="wang">
   <div class="wrap">
-    <div class="chapter"><h2>会做什么</h2></div>
-
-    <div class="craft">
-      <div>
-        <h3>三维</h3>
-        <p>镜头 Layout：按分镜定机位、构图、调度。<br>
-           Maya：基础骨骼绑定，能拉动画。<br>
-           UE5：搭场景，渲染镜头首尾帧。</p>
+    <div class="entry">
+      <div class="head">
+        <h2>《百年老街·王三街》第一集</h2>
+        <span class="tag">三维动画　2025</span>
       </div>
-      <div>
-        <h3>AI</h3>
-        <p>文生图、图生图、LoRA 训练。<br>
-           用首尾帧驱动 AI 生成中间帧，一段段接起来。</p>
+      <div class="plate"><img class="zoom" src="wsj_shot.jpg" alt="《百年老街·王三街》第一集" loading="lazy"></div>
+      <div class="plate"><img class="zoom" src="wsj_shot2.jpg" alt="《百年老街·王三街》第一集" loading="lazy"></div>
+      <div class="plate" style="max-width:470px"><img class="zoom" src="wsj_poster.jpg" alt="《抚育之情》海报" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="travel">
+  <div class="wrap">
+    <div class="entry">
+      <div class="head">
+        <h2>绘本《他喜欢去旅行》</h2>
+        <span class="tag">绘本　2025</span>
       </div>
-      <div>
-        <h3>画画</h3>
-        <p>插画、漫画、绘本、角色和 IP 形象。<br>
-           常用 Photoshop、CLIP STUDIO PAINT、SAI、Krita。</p>
+      <div class="plate"><img class="zoom" src="pb_cover.jpg" alt="《他喜欢去旅行》封面" loading="lazy"></div>
+      <div class="plate"><img class="zoom" src="pb_title.jpg" alt="《他喜欢去旅行》扉页" loading="lazy"></div>
+      <div class="pair">
+        <div class="plate"><img class="zoom" src="pb_01.jpg" alt="内页" loading="lazy"></div>
+        <div class="plate"><img class="zoom" src="pb_02.jpg" alt="内页" loading="lazy"></div>
+        <div class="plate"><img class="zoom" src="pb_03.jpg" alt="内页" loading="lazy"></div>
+        <div class="plate"><img class="zoom" src="pb_04.jpg" alt="内页" loading="lazy"></div>
+        <div class="plate"><img class="zoom" src="pb_05.jpg" alt="内页" loading="lazy"></div>
+        <div class="plate"><img class="zoom" src="pb_06.jpg" alt="内页" loading="lazy"></div>
+        <div class="plate"><img class="zoom" src="pb_07.jpg" alt="内页" loading="lazy"></div>
+        <div class="plate"><img class="zoom" src="pb_08.jpg" alt="内页" loading="lazy"></div>
       </div>
-      <div>
-        <h3>顺手用的</h3>
-        <p>还碰过 Blender、SketchUp、Substance 3D、Arnold、DAZ Studio、Premiere、After Effects。只是碰过，不算会。</p>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="kouji">
+  <div class="wrap">
+    <div class="entry">
+      <div class="head">
+        <h2>绘本《口技》</h2>
+        <span class="tag">绘本　2024</span>
+      </div>
+      <figure class="film">
+        <video controls preload="none" playsinline poster="kouji_video_poster.jpg">
+          <source src="kouji_book.mp4" type="video/mp4">
+        </video>
+      </figure>
+      <figure class="film print-only">
+        <img src="kouji_video_poster.jpg" alt="《口技》实体绘本">
+      </figure>
+      <div class="pair">
+        <div class="plate"><img class="zoom" src="kouji_a.jpg" alt="《口技》内页" loading="lazy"></div>
+        <div class="plate"><img class="zoom" src="kouji_b.jpg" alt="《口技》内页" loading="lazy"></div>
+        <div class="plate"><img class="zoom" src="kouji_c.jpg" alt="《口技》人物设计" loading="lazy"></div>
+        <div class="plate"><img class="zoom" src="kouji_d.jpg" alt="《口技》场景设计" loading="lazy"></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="wsj">
+<section class="work" id="worker">
   <div class="wrap">
-    <div class="chapter">
-      <h2>《百年老街·王三街》第一集</h2>
-      <span class="when">2025 · 三维动画短片</span>
-    </div>
-
-    <div class="lede">
-      <p>浙江传媒学院动画与数字艺术学院的「新疆题材动漫创作计划」。老师执导，校友公司以校企合作的方式承接。全片原计划三集，我参与第一集。</p>
-      <p>片子入围第 26 届北京电影学院动画学院奖，获评 2025 年度自治区社科普及优秀项目。</p>
-    </div>
-
-    <h3 class="beat">我做的四件事</h3>
-    <div class="four">
-      <div><b>镜头 Layout</b><p>团队给了分镜、人物和场景模型，我把分镜落成三维画面：机位、构图、调度。</p></div>
-      <div><b>骨骼绑定</b><p>项目模型的部分骨骼绑定。</p></div>
-      <div><b>UE5 和 AI</b><p>在 UE5 里渲染每个镜头的首尾帧，中间的帧交给 AI 生成视频片段，再拼起来。</p></div>
-      <div><b>海报</b><p>帮忙做的。</p></div>
-    </div>
-
-    <h3 class="beat">一个镜头是怎么出来的</h3>
-    <div class="steps">
-      <div class="st"><div class="n">1</div><div class="t">分镜</div><div class="d">团队画的，不是我</div></div>
-      <div class="st"><div class="n">2</div><div class="t">Layout</div><div class="d">我定机位、构图、调度</div></div>
-      <div class="st"><div class="n">3</div><div class="t">UE5 首尾帧</div><div class="d">我搭场景，渲首帧和尾帧</div></div>
-      <div class="st"><div class="n">4</div><div class="t">AI 中间帧</div><div class="d">用首尾帧驱动生成</div></div>
-      <div class="st"><div class="n">5</div><div class="t">成片</div><div class="d">我接成完整片段</div></div>
-    </div>
-
-    <h3 class="beat">团队的分镜，我照着落三维</h3><div class="mason shot">
-      <figure><img src="wsj1.jpg" loading="lazy" alt="分镜：大门牌坊"><figcaption>大门牌坊</figcaption></figure>
-      <figure><img src="wsj2.jpg" loading="lazy" alt="分镜：肉孜托孤"><figcaption>肉孜托孤</figcaption></figure>
-      <figure><img src="wsj3.jpg" loading="lazy" alt="分镜：航拍阿克苏"><figcaption>航拍阿克苏</figcaption></figure>
-      <figure><img src="wsj7.jpg" loading="lazy" alt="分镜：航拍阿克苏之二"><figcaption>航拍阿克苏之二</figcaption></figure>
-      <figure><img src="wsj8.jpg" loading="lazy" alt="分镜：航拍王三街"><figcaption>航拍王三街</figcaption></figure>
-      <figure><img src="wsj9.jpg" loading="lazy" alt="分镜：新疆小院"><figcaption>新疆小院</figcaption></figure>
-      <figure><img src="wsj4.jpg" loading="lazy" alt="分镜：学堂"><figcaption>学堂</figcaption></figure>
-      <figure><img src="wsj5.jpg" loading="lazy" alt="分镜：室内苏醒"><figcaption>室内苏醒</figcaption></figure>
-      <figure><img src="wsj6.jpg" loading="lazy" alt="分镜：离开阿克苏"><figcaption>离开阿克苏</figcaption></figure>
-    </div>
-
-    <h3 class="beat">中间改过两稿</h3>
-    <div class="grid g2 shot">
-      <figure><img src="rev13.jpg" loading="lazy" alt="分镜修改稿：学堂"><figcaption>学堂，改稿</figcaption></figure>
-      <figure><img src="rev16.jpg" loading="lazy" alt="分镜修改稿：老街"><figcaption>老街，改稿</figcaption></figure>
-    </div>
-
-    <h3 class="beat">成片</h3>
-    <figure class="wide shot narrow">
-      <img src="wsj_shot2.jpg" loading="lazy" alt="成片画面：药铺夜景">
-      <figcaption>药铺里的一个镜头</figcaption>
-    </figure>
-
-    <h3 class="beat">Maya 里的绑定</h3>
-    <figure class="wide shot narrow">
-      <img src="wsj_rig.jpg" loading="lazy" alt="Maya 骨骼绑定工作截图">
-      <figcaption>角色骨骼和控制曲线，文件 WSJ_15-3.mb，Autodesk Maya 2025</figcaption>
-    </figure>
-
-    <h3 class="beat">海报</h3>
-    <figure class="wide shot narrower">
-      <img src="wsj_poster.jpg" loading="lazy" alt="《百年老街·王三街》项目海报">
-      <figcaption>《抚育之情》，第三届（2025）新疆动漫节。海报我帮忙做的。</figcaption>
-    </figure>
-
-    <div class="plain">
-      <p>说清楚一件事：人物模型、场景模型、剧本、分镜、导演，都不是我做的。</p>
-      <p>我做的 Layout，是拿着已有的模型和分镜把镜头摆出来，不是画分镜。</p>
+    <div class="entry">
+      <div class="head">
+        <h2>《打工鱼的职场百态》</h2>
+        <span class="tag">插图 / IP　2024</span>
+      </div>
+      <div class="plate"><img class="zoom" src="dgy_cover.jpg" alt="《打工鱼的职场百态》封面" loading="lazy"></div>
+      <div class="plate"><img class="zoom" src="dgy_poster.jpg" alt="《打工鱼的职场百态》海报" loading="lazy"></div>
+      <div class="sheet">
+        <img src="dgy_e01.gif" alt="爱你" loading="lazy">
+        <img src="dgy_e02.gif" alt="不要" loading="lazy">
+        <img src="dgy_e03.gif" alt="吃瓜" loading="lazy">
+        <img src="dgy_e04.gif" alt="糊涂" loading="lazy">
+        <img src="dgy_e05.gif" alt="拒了" loading="lazy">
+        <img src="dgy_e06.gif" alt="冷静" loading="lazy">
+        <img src="dgy_e07.gif" alt="凉凉" loading="lazy">
+        <img src="dgy_e08.gif" alt="升天" loading="lazy">
+        <img src="dgy_e09.gif" alt="生气" loading="lazy">
+        <img src="dgy_e10.gif" alt="失落" loading="lazy">
+        <img src="dgy_e11.gif" alt="危" loading="lazy">
+        <img src="dgy_e12.gif" alt="畏惧" loading="lazy">
+        <img src="dgy_e13.gif" alt="耀眼" loading="lazy">
+        <img src="dgy_e14.gif" alt="疑惑" loading="lazy">
+        <img src="dgy_e15.gif" alt="营业" loading="lazy">
+        <img src="dgy_e16.gif" alt="悠闲" loading="lazy">
+      </div>
     </div>
   </div>
 </section>
 
-<section id="kouji">
+<section class="work" id="draw">
   <div class="wrap">
-    <div class="chapter">
-      <h2>绘本《口技》</h2>
-      <span class="when">2024 · 实体绘本</span>
-    </div>
-
-    <div class="lede">
-      <p>改编自清代林嗣环的《口技》，水墨设色，从「遥闻深巷中犬吠」一直画到「两股战战，几欲先走」。入围 2026 北京电影学院漫画节。</p>
-      <p>课程作业，老师指导，小组一起做。我画了部分人物、部分场景，还有一些内页。</p>
-    </div>
-
-    <h3 class="beat">书翻一遍</h3>
-    <figure class="clip">
-      <video controls preload="none" playsinline poster="kouji_video_poster.jpg">
-        <source src="kouji_book.mp4" type="video/mp4">
-        你的浏览器放不了这个视频，可以<a href="kouji_book.mp4">下载来看</a>。
-      </video>
-      <figcaption>实拍，57 秒。封面署名页能看到绘者名单。</figcaption>
-    </figure>
-    <figure class="clip print-only" style="margin-top:8px">
-      <img src="kouji_video_poster.jpg" alt="实体绘本封面">
-      <figcaption>实体绘本封面</figcaption>
-    </figure>
-
-    <h3 class="beat">我画的那几张</h3>
-    <div class="grid g2 shot">
-      <figure><img src="kouji_a.jpg" loading="lazy" alt="口技内页：一家四口"><figcaption>一家四口</figcaption></figure>
-      <figure><img src="kouji_b.jpg" loading="lazy" alt="口技内页：火场"><figcaption>火场</figcaption></figure>
-      <figure><img src="kouji_c.jpg" loading="lazy" alt="人物设计稿"><figcaption>人物</figcaption></figure>
-      <figure><img src="kouji_d.jpg" loading="lazy" alt="场景设计：江南水乡"><figcaption>江南水乡</figcaption></figure>
-    </div>
-    <p class="tail">这四张是我画的。书里其余部分由组里其他人完成。</p>
-  </div>
-</section>
-
-<section id="pb">
-  <div class="wrap">
-    <div class="chapter">
-      <h2>绘本《他喜欢去旅行》</h2>
-      <span class="when">2025 · 16 页</span>
-    </div>
-
-    <div class="lede">
-      <p>一个人在城市里走：双层巴士的车窗、雨天的街市、海边的雕像、茶餐厅的下午。</p>
-      <p>封面、扉页、环衬和九个跨页，画面都是我画的。</p>
-    </div>
-
-    <h3 class="beat">整本书摊开</h3>
-    <figure class="wide shot">
-      <img src="pb_overview.jpg" loading="lazy" alt="绘本全书结构总览">
-      <figcaption>封底、封面、前环衬、扉页，跨页 1 到 16</figcaption>
-    </figure>
-
-    <h3 class="beat">封面和扉页</h3>
-    <div class="grid g2 shot">
-      <figure><img src="pb_cover.jpg" loading="lazy" alt="绘本封面"><figcaption>封面</figcaption></figure>
-      <figure><img src="pb_title.jpg" loading="lazy" alt="绘本扉页"><figcaption>扉页</figcaption></figure>
-    </div>
-
-    <h3 class="beat">内页</h3>
-    <div class="grid g2 shot">
-      <figure><img src="pb_01.jpg" loading="lazy" alt="跨页 1-2 巴士"><figcaption>巴士</figcaption></figure>
-      <figure><img src="pb_02.jpg" loading="lazy" alt="跨页 3-4 街景"><figcaption>街景</figcaption></figure>
-      <figure><img src="pb_03.jpg" loading="lazy" alt="跨页 5-6 救生员"><figcaption>救生员</figcaption></figure>
-      <figure><img src="pb_04.jpg" loading="lazy" alt="跨页 7-8 天空"><figcaption>天空</figcaption></figure>
-      <figure><img src="pb_05.jpg" loading="lazy" alt="跨页 9-10 雨夜"><figcaption>雨夜</figcaption></figure>
-      <figure><img src="pb_06.jpg" loading="lazy" alt="跨页 11-12 雕像"><figcaption>雕像</figcaption></figure>
-      <figure><img src="pb_07.jpg" loading="lazy" alt="跨页 13-14 茶餐厅"><figcaption>茶餐厅</figcaption></figure>
-      <figure><img src="pb_08.jpg" loading="lazy" alt="跨页 15-16 冰淇淋"><figcaption>冰淇淋</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section id="art">
-  <div class="wrap">
-    <div class="chapter">
-      <h2>插画和练习</h2>
-      <span class="when">课程作业与日常</span>
-    </div>
-    <div class="mason shot">
-      <figure><img src="art_01.jpg" loading="lazy" alt="矢量插画练习"><figcaption>矢量插画</figcaption></figure>
-      <figure><img src="art_06.jpg" loading="lazy" alt="插画创作：脉冲"><figcaption>脉冲</figcaption></figure>
-      <figure><img src="art_09.jpg" loading="lazy" alt="力天使插画"><figcaption>力天使</figcaption></figure>
-      <figure><img src="art_08.jpg" loading="lazy" alt="四格漫画创作"><figcaption>四格漫画</figcaption></figure>
-      <figure><img src="art_07.jpg" loading="lazy" alt="自画像"><figcaption>自画像</figcaption></figure>
-      <figure><img src="art_11.jpg" loading="lazy" alt="插画练习"><figcaption>插画练习</figcaption></figure>
-      <figure><img src="art_02.jpg" loading="lazy" alt="动物练习"><figcaption>动物</figcaption></figure>
-      <figure><img src="art_03.jpg" loading="lazy" alt="透视练习"><figcaption>透视</figcaption></figure>
-      <figure><img src="art_04.jpg" loading="lazy" alt="人物练习：夏亚"><figcaption>夏亚</figcaption></figure>
-      <figure><img src="art_10.jpg" loading="lazy" alt="人物练习：凉宫春日"><figcaption>凉宫春日</figcaption></figure>
-      <figure><img src="art_05.jpg" loading="lazy" alt="日常练习"><figcaption>日常</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section id="dgy">
-  <div class="wrap">
-    <div class="chapter">
-      <h2>《打工鱼的职场百态》</h2>
-      <span class="when">2024 · 表情包</span>
-    </div>
-
-    <div class="lede">
-      <p>一条绿色小鱼的职场日常：加班、摸鱼、开会、心累。十六个表情，另有封面和海报。</p>
-      <p>风车杯第十六届创意设计大赛鼓励奖，证书由中国玩具和婴童用品协会发。形象、表情、封面、海报都是我一个人做的。</p>
-    </div>
-
-    <h3 class="beat">主视觉</h3>
-    <div class="grid g2 shot">
-      <figure><img src="dgy_cover.jpg" loading="lazy" alt="打工鱼封面图"><figcaption>封面</figcaption></figure>
-      <figure><img src="dgy_all.jpg" loading="lazy" alt="打工鱼全套表情总览"><figcaption>全套总览</figcaption></figure>
-    </div>
-
-    <h3 class="beat">十六个表情，点开是动的</h3>
-    <div class="grid g8">
-      <figure class="thumb"><img src="dgy_e01.gif" loading="lazy" alt="爱你"><figcaption>爱你</figcaption></figure>
-      <figure class="thumb"><img src="dgy_e02.gif" loading="lazy" alt="不要"><figcaption>不要</figcaption></figure>
-      <figure class="thumb"><img src="dgy_e03.gif" loading="lazy" alt="吃瓜"><figcaption>吃瓜</figcaption></figure>
-      <figure class="thumb"><img src="dgy_e04.gif" loading="lazy" alt="糊涂"><figcaption>糊涂</figcaption></figure>
-      <figure class="thumb"><img src="dgy_e05.gif" loading="lazy" alt="拒了"><figcaption>拒了</figcaption></figure>
-      <figure class="thumb"><img src="dgy_e06.gif" loading="lazy" alt="冷静"><figcaption>冷静</figcaption></figure>
-      <figure class="thumb"><img src="dgy_e07.gif" loading="lazy" alt="凉凉"><figcaption>凉凉</figcaption></figure>
-      <figure class="thumb"><img src="dgy_e08.gif" loading="lazy" alt="升天"><figcaption>升天</figcaption></figure>
-      <figure class="thumb"><img src="dgy_e09.gif" loading="lazy" alt="生气"><figcaption>生气</figcaption></figure>
-      <figure class="thumb"><img src="dgy_e10.gif" loading="lazy" alt="失落"><figcaption>失落</figcaption></figure>
-      <figure class="thumb"><img src="dgy_e11.gif" loading="lazy" alt="危"><figcaption>危</figcaption></figure>
-      <figure class="thumb"><img src="dgy_e12.gif" loading="lazy" alt="畏惧"><figcaption>畏惧</figcaption></figure>
-      <figure class="thumb"><img src="dgy_e13.gif" loading="lazy" alt="耀眼"><figcaption>耀眼</figcaption></figure>
-      <figure class="thumb"><img src="dgy_e14.gif" loading="lazy" alt="疑惑"><figcaption>疑惑</figcaption></figure>
-      <figure class="thumb"><img src="dgy_e15.gif" loading="lazy" alt="营业"><figcaption>营业</figcaption></figure>
-      <figure class="thumb"><img src="dgy_e16.gif" loading="lazy" alt="悠闲"><figcaption>悠闲</figcaption></figure>
-    </div>
-
-    <h3 class="beat">海报</h3>
-    <figure class="wide shot narrow">
-      <img src="dgy_poster.jpg" loading="lazy" alt="打工鱼宣传海报">
-      <figcaption>宣传海报</figcaption>
-    </figure>
-
-    <div class="plain">
-      <p>奖项是鼓励奖，证书由中国玩具和婴童用品协会颁发。证书原件没扫，需要的话可以另外给。</p>
-    </div>
-  </div>
-</section>
-
-<section id="course">
-  <div class="wrap">
-    <div class="chapter">
-      <h2>课程作业</h2>
-      <span class="when">动漫角色设计、漫画背景设计、插画创作、动态造型基础</span>
-    </div>
-    <div class="grid g2 shot">
-      <figure><img src="cw1.jpg" loading="lazy" alt="动漫角色设计"><figcaption>动漫角色设计</figcaption></figure>
-      <figure><img src="cw2.jpg" loading="lazy" alt="漫画背景设计"><figcaption>漫画背景设计</figcaption></figure>
-      <figure><img src="cw3.jpg" loading="lazy" alt="插画创作"><figcaption>插画创作</figcaption></figure>
-      <figure><img src="cw4.jpg" loading="lazy" alt="动态造型基础"><figcaption>动态造型基础</figcaption></figure>
+    <div class="entry">
+      <div class="head">
+        <h2>插画</h2>
+        <span class="tag">插图　持续</span>
+      </div>
+      <div class="mason">
+        <img class="zoom" src="art_01.jpg" alt="矢量插画" loading="lazy">
+        <img class="zoom" src="art_06.jpg" alt="脉冲" loading="lazy">
+        <img class="zoom" src="art_07.jpg" alt="自画像" loading="lazy">
+        <img class="zoom" src="art_09.jpg" alt="力天使" loading="lazy">
+        <img class="zoom" src="art_08.jpg" alt="四格漫画" loading="lazy">
+        <img class="zoom" src="art_11.jpg" alt="插画练习" loading="lazy">
+        <img class="zoom" src="art_02.jpg" alt="动物练习" loading="lazy">
+        <img class="zoom" src="art_03.jpg" alt="透视练习" loading="lazy">
+        <img class="zoom" src="art_04.jpg" alt="夏亚" loading="lazy">
+        <img class="zoom" src="art_10.jpg" alt="凉宫春日" loading="lazy">
+        <img class="zoom" src="cw1.jpg" alt="动漫角色设计" loading="lazy">
+        <img class="zoom" src="cw2.jpg" alt="漫画背景设计" loading="lazy">
+        <img class="zoom" src="cw3.jpg" alt="插画创作" loading="lazy">
+        <img class="zoom" src="cw4.jpg" alt="动态造型基础" loading="lazy">
+        <img class="zoom" src="art_05.jpg" alt="日常练习" loading="lazy">
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <a class="dl" href="portfolio.pdf" target="_blank" rel="noopener">下载 PDF 版作品集</a>
-    <p>王嘉皓，浙江传媒学院动画（漫插画），2028 届</p>
-    <p>1977132561@qq.com</p>
-    <a class="up" href="#top">回到顶部</a>
+    <span>© 王嘉皓</span>
+    <a href="mailto:1977132561@qq.com">1977132561@qq.com</a>
   </div>
 </footer>
 
-<div id="lb" role="dialog" aria-modal="true" aria-label="图片放大查看">
+<div id="lb" role="dialog" aria-modal="true" aria-label="放大">
   <span class="x" aria-label="关闭">×</span>
   <img alt="">
-  <div class="cap"></div>
 </div>
 
 <script>
 (function(){
   var lb = document.getElementById('lb');
   var lbImg = lb.querySelector('img');
-  var lbCap = lb.querySelector('.cap');
-  function open(src, cap){
-    lbImg.src = src; lbImg.alt = cap || ''; lbCap.textContent = cap || '';
+  function open(src, alt){
+    lbImg.src = src; lbImg.alt = alt || '';
     lb.classList.add('on'); document.body.style.overflow = 'hidden';
   }
   function close(){
     lb.classList.remove('on'); lbImg.removeAttribute('src'); document.body.style.overflow = '';
   }
-  document.querySelectorAll('.shot figure img').forEach(function(img){
-    img.addEventListener('click', function(){
-      var fig = img.closest('figure');
-      var cap = fig && fig.querySelector('figcaption');
-      open(img.currentSrc || img.src, cap ? cap.textContent : img.alt);
-    });
+  document.querySelectorAll('img.zoom').forEach(function(img){
+    img.addEventListener('click', function(){ open(img.currentSrc || img.src, img.alt); });
   });
   lb.addEventListener('click', function(e){
     if (e.target === lb || e.target.classList.contains('x')) close();
