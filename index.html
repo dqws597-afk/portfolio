@@ -126,6 +126,7 @@ figcaption{font-size:12.5px;color:var(--sub);margin-top:8px;line-height:1.6}
 .video video{width:100%;border:1px solid var(--line);border-radius:2px;background:#000;display:block}
 .video figcaption{margin-top:10px}
 .single{max-width:680px}
+.single-sm{max-width:460px}
 
 footer{border-top:1px solid var(--line);padding:56px 0 76px;color:var(--sub);font-size:14px}
 .btn{display:inline-block;border:1px solid var(--accent);color:var(--accent);
@@ -146,6 +147,46 @@ footer p{margin-top:4px}
   cursor:pointer;opacity:.8;font-family:sans-serif}
 #lb .x:hover{opacity:1}
 @media(max-width:560px){#lb{padding:12px}#lb img{max-height:calc(100vh - 80px)}}
+.print-only{display:none}
+
+/* ---------- 打印 / PDF ---------- */
+@media print{
+  @page{size:A4;margin:14mm 12mm}
+  html{scroll-behavior:auto}
+  body{font-size:10pt;line-height:1.6}
+  .accentbar{display:none}
+  .topnav{display:none}
+  #lb{display:none!important}
+  .wrap{max-width:none;padding:0}
+  header{padding:0 0 10mm;page-break-after:avoid}
+  section{padding:7mm 0;border-top:1px solid #bbb}
+  .sechead{page-break-after:avoid;margin-bottom:5mm}
+  h1{font-size:26pt}
+  h2{font-size:16pt}
+  .name{font-size:14pt}
+  .intro{font-size:9.5pt}
+  .sub,.sub2{font-size:10pt}
+  .grid{gap:4mm;margin-top:4mm}
+  .skills{grid-template-columns:repeat(2,1fr)!important}
+  .cols{grid-template-columns:1fr 1fr!important;gap:8mm}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g8{grid-template-columns:repeat(8,1fr);gap:2mm}
+  figure,figure img,figcaption{page-break-inside:avoid}
+  figure img{border:1px solid #ddd}
+  .flow{page-break-inside:avoid}
+  .boundary{page-break-inside:avoid;background:#f5f5f5}
+  .video{max-width:none}
+  .video video{display:none}
+  .video .print-only{display:block}
+  .print-only{display:block}
+  .single{max-width:120mm}
+  .single-sm{max-width:80mm}
+  footer{padding:6mm 0 0;page-break-before:avoid}
+  .btn{display:none}
+  .top{display:none}
+  a{color:inherit;text-decoration:none}
+}
 </style>
 </head>
 <body>
@@ -158,6 +199,8 @@ footer p{margin-top:4px}
       <a href="#skills">能力矩阵</a>
       <a href="#wsj">王三街</a>
       <a href="#kouji">口技</a>
+      <a href="#pb">绘本</a>
+      <a href="#art">插画练习</a>
       <a href="#dgy">打工鱼</a>
       <a href="#course">课程作品</a>
     </div>
@@ -176,8 +219,6 @@ footer p{margin-top:4px}
     <p class="idcard">浙江传媒学院　·　动画（漫插画）　·　本科在读　·　2028 届</p>
     <div class="contact">
       <span>邮箱　<b>1977132561@qq.com</b></span>
-      <span>手机　<b>135 1681 4130</b></span>
-      <span>备用　<b>131 3106 1755</b></span>
     </div>
   </div>
 </header>
@@ -229,7 +270,7 @@ footer p{margin-top:4px}
         </ul>
       </div>
     </div>
-    <p class="note">说明：三维部分的能力来自《百年老街·王三街》第一集的实际制作（Layout、部分绑定、UE5 首尾帧渲染、AI 中间帧拼接）；二维部分来自绘本《口技》、表情包《打工鱼的职场百态》与课程作品。未参与过的环节不作宣传。</p>
+    <p class="note">说明：三维部分的能力来自《百年老街·王三街》第一集的实际制作（Layout、部分绑定、UE5 首尾帧渲染、AI 中间帧拼接）；二维部分来自绘本《他喜欢去旅行》、绘本《口技》、表情包《打工鱼的职场百态》与课程练习。未参与过的环节不作宣传。</p>
   </div>
 </section>
 
@@ -299,6 +340,24 @@ footer p{margin-top:4px}
       <figure><img src="rev16.jpg" loading="lazy" alt="分镜修改稿：老街"><figcaption>修改稿 · 老街</figcaption></figure>
     </div>
 
+    <h3 class="subhead">成片画面（UE5 渲染 + AI 中间帧合成）</h3>
+    <div class="grid g2 shot">
+      <figure><img src="wsj_shot.jpg" loading="lazy" alt="最终成片画面：车内回头"><figcaption>成片 · 车内回头</figcaption></figure>
+      <figure><img src="wsj_shot2.jpg" loading="lazy" alt="最终成片画面：药铺夜景"><figcaption>成片 · 药铺夜景</figcaption></figure>
+    </div>
+
+    <h3 class="subhead">Maya 骨骼绑定</h3>
+    <figure class="shot single">
+      <img src="wsj_rig.jpg" loading="lazy" alt="Maya 骨骼绑定工作截图">
+      <figcaption>角色骨骼与控制曲线（WSJ_15-3.mb · Autodesk Maya 2025）</figcaption>
+    </figure>
+
+    <h3 class="subhead">项目海报（协助）</h3>
+    <figure class="shot single-sm">
+      <img src="wsj_poster.jpg" loading="lazy" alt="《百年老街·王三街》项目海报">
+      <figcaption>《抚育之情》· 第三届（2025）新疆动漫节 · 海报设计协助</figcaption>
+    </figure>
+
     <div class="boundary">
       <b>职责边界说明：</b>本项目中，人物模型制作、场景模型制作、剧本、分镜绘制、导演均非本人负责。本人负责的 Layout 是「基于既有模型与分镜完成三维镜头落地」，不等同于分镜绘制。团队成果不作个人独立作品表述。
     </div>
@@ -337,6 +396,10 @@ footer p{margin-top:4px}
       </video>
       <figcaption>实体绘本翻阅实录（57 秒）｜封面署名页可见绘者名单</figcaption>
     </figure>
+    <figure class="video print-only" style="margin-top:8px">
+      <img src="kouji_video_poster.jpg" alt="实体绘本封面">
+      <figcaption>实体绘本封面（视频静帧）</figcaption>
+    </figure>
 
     <h3 class="subhead">内页与设定（本人绘制原稿）</h3>
     <div class="grid g2 shot">
@@ -346,6 +409,77 @@ footer p{margin-top:4px}
       <figure><img src="kouji_d.jpg" loading="lazy" alt="场景设计：江南水乡"><figcaption>场景设计 · 江南水乡</figcaption></figure>
     </div>
     <p class="note">以上四张为本人绘制的原稿；绘本其余部分由小组其他成员完成。</p>
+  </div>
+</section>
+
+<!-- ============ 绘本《他喜欢去旅行》 ============ -->
+<section id="pb">
+  <div class="wrap">
+    <div class="sechead">
+      <h2>绘本《他喜欢去旅行》</h2>
+      <p class="meta">2025　｜　16 页绘本　｜　课程作品（绘本创作）</p>
+      <div class="rule"></div>
+    </div>
+
+    <div class="cols">
+      <div class="block">
+        <h3>作品说明</h3>
+        <p>一本 16 页的水粉风绘本：以「他喜欢去旅行」为线索，用连续跨页记录一个人在城里的漫游——双层巴士的车窗、雨天的街市、海边的雕像、茶餐厅的午后。</p>
+      </div>
+      <div class="block">
+        <h3>本人负责</h3>
+        <p>封面、扉页、前环衬页与全部 9 个跨页的画面绘制；构图、色彩与画面叙事均由本人完成。</p>
+      </div>
+    </div>
+
+    <h3 class="subhead">全书结构（封底 · 封面 · 环衬 · 扉页 · 跨页 1–16）</h3>
+    <figure class="shot">
+      <img src="pb_overview.jpg" loading="lazy" alt="绘本全书结构总览">
+      <figcaption>全书结构总览</figcaption>
+    </figure>
+
+    <h3 class="subhead">封面与扉页</h3>
+    <div class="grid g2 shot">
+      <figure><img src="pb_cover.jpg" loading="lazy" alt="绘本封面"><figcaption>封面</figcaption></figure>
+      <figure><img src="pb_title.jpg" loading="lazy" alt="绘本扉页"><figcaption>扉页</figcaption></figure>
+    </div>
+
+    <h3 class="subhead">内页跨页 1–16</h3>
+    <div class="grid g2 shot">
+      <figure><img src="pb_01.jpg" loading="lazy" alt="跨页 1-2 巴士"><figcaption>1–2　巴士</figcaption></figure>
+      <figure><img src="pb_02.jpg" loading="lazy" alt="跨页 3-4 街景"><figcaption>3–4　街景</figcaption></figure>
+      <figure><img src="pb_03.jpg" loading="lazy" alt="跨页 5-6 救生员"><figcaption>5–6　救生员</figcaption></figure>
+      <figure><img src="pb_04.jpg" loading="lazy" alt="跨页 7-8 天空"><figcaption>7–8　天空</figcaption></figure>
+      <figure><img src="pb_05.jpg" loading="lazy" alt="跨页 9-10 雨夜"><figcaption>9–10　雨夜</figcaption></figure>
+      <figure><img src="pb_06.jpg" loading="lazy" alt="跨页 11-12 雕像"><figcaption>11–12　雕像</figcaption></figure>
+      <figure><img src="pb_07.jpg" loading="lazy" alt="跨页 13-14 茶餐厅"><figcaption>13–14　茶餐厅</figcaption></figure>
+      <figure><img src="pb_08.jpg" loading="lazy" alt="跨页 15-16 冰淇淋"><figcaption>15–16　冰淇淋</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 插画与练习 ============ -->
+<section id="art">
+  <div class="wrap">
+    <div class="sechead">
+      <h2>插画与练习</h2>
+      <p class="meta">矢量插画　·　插画创作　·　四格漫画　·　自画像　·　动物 / 透视 / 人物练习</p>
+      <div class="rule"></div>
+    </div>
+    <div class="grid g3 shot">
+      <figure><img src="art_01.jpg" loading="lazy" alt="矢量插画练习"><figcaption>矢量插画练习</figcaption></figure>
+      <figure><img src="art_06.jpg" loading="lazy" alt="插画创作：脉冲"><figcaption>插画创作 · 脉冲</figcaption></figure>
+      <figure><img src="art_09.jpg" loading="lazy" alt="力天使插画"><figcaption>力天使插画</figcaption></figure>
+      <figure><img src="art_08.jpg" loading="lazy" alt="四格漫画创作"><figcaption>四格漫画创作</figcaption></figure>
+      <figure><img src="art_07.jpg" loading="lazy" alt="自画像"><figcaption>自画像</figcaption></figure>
+      <figure><img src="art_11.jpg" loading="lazy" alt="插画练习"><figcaption>插画练习</figcaption></figure>
+      <figure><img src="art_02.jpg" loading="lazy" alt="动物练习"><figcaption>动物练习</figcaption></figure>
+      <figure><img src="art_03.jpg" loading="lazy" alt="透视练习"><figcaption>透视练习</figcaption></figure>
+      <figure><img src="art_04.jpg" loading="lazy" alt="人物练习：夏亚"><figcaption>人物练习 · 夏亚</figcaption></figure>
+      <figure><img src="art_10.jpg" loading="lazy" alt="人物练习：凉宫春日"><figcaption>人物练习 · 凉宫春日</figcaption></figure>
+      <figure><img src="art_05.jpg" loading="lazy" alt="日常练习"><figcaption>日常练习</figcaption></figure>
+    </div>
+    <p class="note">以上为课程作业与日常练习，用于展示造型、透视、色彩与风格覆盖面。</p>
   </div>
 </section>
 
@@ -428,7 +562,7 @@ footer p{margin-top:4px}
   <div class="wrap">
     <a class="btn" href="portfolio.pdf" target="_blank" rel="noopener">下载 PDF 版作品集</a>
     <p>王嘉皓　·　浙江传媒学院 动画（漫插画）　·　本科在读（2028 届）</p>
-    <p>1977132561@qq.com　·　135 1681 4130　·　131 3106 1755</p>
+    <p>1977132561@qq.com</p>
     <a class="top" href="#top">↑ 回到顶部</a>
   </div>
 </footer>
