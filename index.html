@@ -91,10 +91,16 @@ footer a:hover{color:var(--ink)}
   .masthead{padding:0 0 5mm}
   .masthead h1{font-size:24pt}
   .work{padding-top:7mm}
-  .entry{padding-top:3.5mm;page-break-after:avoid}
+  .entry{padding-top:3.5mm}
+  .entry .head{break-after:avoid;page-break-after:avoid}
   .entry h2{font-size:13pt}
-  .wall{columns:3!important;column-gap:4mm;margin-top:4mm}
-  .wall img{margin-bottom:4mm;page-break-inside:avoid}
+  /* 打印：多列会整块跳页，改网格；单元格统一 4:3 白底，图片居中不留空档 */
+  .wall{columns:auto!important;-webkit-columns:auto!important;column-gap:0!important;
+        display:grid!important;grid-template-columns:repeat(3,1fr);gap:3mm;
+        align-items:start;margin-top:4mm}
+  .wall img{margin-bottom:0!important;width:100%;
+        aspect-ratio:4/3;object-fit:contain;object-position:center;background:#fff;
+        break-inside:avoid}
   .sheet{grid-template-columns:repeat(8,1fr);gap:2mm;margin-top:4mm}
   .film{max-width:none}
   .film video{display:none}
@@ -301,4 +307,8 @@ footer a:hover{color:var(--ink)}
 </script>
 </body>
 </html>
+
+
+
+
 
